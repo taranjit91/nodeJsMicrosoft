@@ -1,0 +1,72 @@
+<!Doctype html>
+<html>
+
+<head>
+    <style>
+        #map {
+            width: 800px;
+            height: 800px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <!-- Google Maps JS API -->
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <!-- GMaps Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js"></script>
+    <script>
+        /* Map Object */
+        var mapObj = new GMaps({
+            el: '#map',
+            lat: 48.857,
+            lng: 2.295
+        });
+
+        var m = mapObj.addMarker({
+            lat: 48.8583701,
+            lng: 2.2944813,
+            title: 'Eiffel Tower',
+            infoWindow: {
+                content: '<h4>Eiffel Tower</h4><div>Paris, France</div>',
+                maxWidth: 100
+            }
+        });
+
+        var c = mapObj.drawCircle({
+            lat: 48.8583701,
+            lng: 2.2944813,
+            radius: 300,
+            fillColor: 'yellow',
+            fillOpacity: 0.5,
+            strokeWeight: 0,
+            click: function(e) {
+                alert('You are inside 300m radius of Stonehenge')
+            }
+        });
+
+        var ol = mapObj.drawOverlay({
+            lat: 48.8583701,
+            lng: 2.2944813,
+            content: '<div class="overlay"><h3>Taj Mahal</h3></div>',
+            verticalAlign: 'top',
+            horizontalOffset: -40
+        });
+
+        var path = [
+            [48.8583701, 2.2944813],
+            [48.8583766, 2.2944815]
+        ];
+
+        var pl = mapObj.drawPolyline({
+            path: path,
+            strokeColor: '#76ff03',
+            strokeOpacity: 1,
+            strokeWeight: 10
+        });
+    </script>
+</body>
+
+</html>
