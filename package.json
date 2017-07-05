@@ -1,0 +1,31 @@
+{
+  "name": "taran",
+  "version": "1.0.0",
+  "description": "test app for microsoft azure connectivity and google maps",
+  "main": "azuredbTest.js",
+  "dependencies": {
+    "tedious": "^2.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taranjit91/nodeJsMicrosoft.git"
+  },
+  "keywords": [
+    "nodejs",
+    "MicrosoftAzure",
+    "bootstrap",
+    "css",
+    "GoogleMaps"
+  ],
+  "author": "Taranjit Kaur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taranjit91/nodeJsMicrosoft/issues"
+  },
+  "homepage": "https://github.com/taranjit91/nodeJsMicrosoft#readme"
+}

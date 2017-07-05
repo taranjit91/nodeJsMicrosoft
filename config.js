@@ -1,0 +1,9 @@
+// Server = tcp: testnode.database.windows.net, 1433;
+// Initial Catalog = testnode;
+// Persist Security Info = False;
+// User ID = { 'nodeadmin' };
+// Password = { 'Node@348' };
+// MultipleActiveResultSets = False;
+// Encrypt = True;
+// TrustServerCertificate = False;
+// Connection Timeout = 30;
