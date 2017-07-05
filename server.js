@@ -22,6 +22,6 @@ var app = express();
 var path = require("path");
 
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/mapUsingGMAPSlib.html'));
+    res.sendFile(path.join(__dirname + '/testMap.html'));
 });
 app.listen(3000);

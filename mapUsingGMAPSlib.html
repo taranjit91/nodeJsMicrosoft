@@ -21,8 +21,8 @@
         /* Map Object */
         var mapObj = new GMaps({
             el: '#map',
-            lat: 48.857,
-            lng: 2.295
+            lat: 43.590197,
+            lng: -70.334492
         });
 
         var m = mapObj.addMarker({
@@ -56,16 +56,34 @@
         });
 
         var path = [
-            [48.8583701, 2.2944813],
-            [48.8583766, 2.2944815]
+            [43.590197, -70.334492],
+            [43.731548, -79.762418]
         ];
 
-        var pl = mapObj.drawPolyline({
-            path: path,
-            strokeColor: '#76ff03',
-            strokeOpacity: 1,
-            strokeWeight: 10
-        });
+        // var pl = mapObj.drawPolyline({
+        //     path: path,
+        //     strokeColor: '#76ff03',
+        //     strokeOpacity: 1,
+        //     strokeWeight: 10
+        // });
+        function calcRoute() {
+            var start = new google.maps.LatLng(43.590197, -70.334492);
+            //var end = new google.maps.LatLng(38.334818, -181.884886);
+            var end = new google.maps.LatLng(43.731548, -79.7624189);
+            var request = {
+                origin: start,
+                destination: end,
+                travelMode: google.maps.TravelMode.DRIVING
+            };
+            directionsService.route(request, function(response, status) {
+                if (status == google.maps.DirectionsStatus.OK) {
+                    directionsDisplay.setDirections(response);
+                    directionsDisplay.setMap(map);
+                } else {
+                    alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
+                }
+            });
+        }
     </script>
 </body>
 
